@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+$paddings: 15px;
+body{
+    font-size: 16px;
+    width: 100vw;
+}
+.row{
+    width: 100%;
+    padding-left: $paddings;
+    padding-right: $paddings;
+}
+.row-flex{
+    width: 100%;
+    padding-left: $paddings;
+    padding-right: $paddings;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+}
+.j-left{
+    justify-content: flex-start
+}
+.j-right{
+    justify-content: flex-end;
+}
+body>.row, body>.row-flex{
+    padding-left: 0;
+    padding-right: 0;
+}
+.container{
+    width: 100%;
+    max-width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.p0{
+    padding-left: 0;
+    padding-right: 0;
+}
+.pl0{
+    padding-left: 0;
+}
+.pr0{
+    padding-right: 0;
+}
+.col-1{width: 8.3333%;}
+.col-2{width: 16.6666%;}
+.col-3{width: 25%;}
+.col-4{width: 33.3333%;}
+.col-5{width: 41.6666%;}
+.col-6{width: 50%;}
+.col-7{width: 58.3333%;}
+.col-8{width: 66.6666%;}
+.col-9{width: 75%;}
+.col-10{width: 83.3333%;}
+.col-11{width: 91.6666%;}
+.col-12{ width: 100%; }
+
+
+.full-height{
+    height: 100vh;
+}
+
+.desk{}
+.mob{}
+.tab{}
