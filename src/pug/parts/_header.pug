@@ -4,3 +4,20 @@
 
 +b.HEADER.header.row
     +e.container.container
+        +e.A(href="/").logo-link
+            +e.IMG(src="/images/logo.png").logo
+        +e.A(href="#").email-link
+            i.envelope
+            span info@mail.ru
+        +e.A(href="#").phone-link
+            i.phone
+            span 8 800 111-11-11
+        +e.A(href="#").call-btn.btn_blue
+            span ЗАКАЗАТЬ ЗВОНОК
+        +b.A(href="#").mini-cart
+            i.cart-icon
+            +e.SPAN.empty мой комплект
+            +e.SPAN.not-empty 
+                +e.SPAN.qty (99)
+                +e.SPAN.total 100 000
+            

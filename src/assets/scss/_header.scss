@@ -1,0 +1,48 @@
+.header {
+
+    &__container {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;    
+    }
+    
+    &__logo-link {
+        margin-right: auto;
+        &:hover{
+        }
+    }
+    
+    &__logo {
+    }
+    
+    &__email-link {
+        @include flex-with-icon;
+        @include header-link;
+        text-transform: uppercase;
+        margin-right: 43px;
+        span {
+        }
+    }
+    
+    &__phone-link {
+        @include flex-with-icon;
+        @include header-link;
+        margin-right: 35px;
+        text-transform: uppercase;
+        span {
+        }
+    }
+    
+    &__call-btn {
+        text-transform: uppercase;
+        margin-right: 20px;
+        span {
+        }
+    }
+}

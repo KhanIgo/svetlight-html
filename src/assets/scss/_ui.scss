@@ -1,0 +1,11 @@
+.btn{
+    text-decoration: none;
+    display: inline-block;
+    &_blue{
+        background-color: $colorBlue;
+        color: white;
+        
+        padding: 0.6em 1.1em;
+        border-radius: 2em;
+    }
+}

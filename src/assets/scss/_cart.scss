@@ -1,0 +1,20 @@
+.mini-cart {
+    @include flex-with-icon;
+    @include header-link;
+
+    .mini-cart__empty {
+        text-transform: uppercase;
+    }
+
+    .mini-cart__not-empty {
+        display: none;
+    }
+
+    .mini-cart__qty {
+        
+    }
+
+    .mini-cart__total {
+    }
+}
+

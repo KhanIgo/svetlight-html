@@ -1,11 +1,8 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 $paddings: 15px;
+$desktop-max-width: 1150px;
+$mobile-max-width: 1150px;
+
 body{
-    font-size: 16px;
     width: 100vw;
 }
 .row{
@@ -37,7 +34,7 @@ body>.row, body>.row-flex{
 }
 .container{
     width: 100%;
-    max-width: 1170px;
+    max-width: $desktop-max-width;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;

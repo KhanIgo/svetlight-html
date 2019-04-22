@@ -1,0 +1,27 @@
+i{
+    display: block;
+    &.envelope {
+        @include mask-image('../img/envelope.svg');
+        width: 30px;
+        height: 23px;
+        background-color: currentColor;
+        transition: inherit;
+        margin-right: 12px;
+    }
+    &.phone {
+        @include mask-image('../img/phone-call.svg');
+        width: 30px;
+        height: 27px;
+        background-color: currentColor;
+        transition: inherit;
+        margin-right: 12px;
+    }
+    &.cart-icon{
+        @include mask-image('../img/shopping-cart.svg');
+        width: 29px;
+        height: 29px;
+        background-color: currentColor;
+        transition: inherit;
+        margin-right: 14px;
+    }
+}
