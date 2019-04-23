@@ -21,7 +21,7 @@ gulp.task( 'server', ['scss', 'pug', 'copy:js', 'copy:libs', 'copy:img', 'copy:f
     gulp.watch( 'src/assets/js/**/*.js', ['copy:js'] );
     gulp.watch( 'src/assets/libs/**/*.*', ['copy:libs'] );
     gulp.watch( 'src/assets/img/**/*.*', ['copy:img'] );
-    gulp.watch( 'src/images/**/*.*', ['copy:img2'] );
+    gulp.watch( 'src/images/**/*.*', ['copy:img'] );
     gulp.watch( 'src/assets/fonts/**/*.*', ['copy:fonts'] );
     gulp.watch( 'src/assets/js/**/*.js').on('change', bs.reload );
 });

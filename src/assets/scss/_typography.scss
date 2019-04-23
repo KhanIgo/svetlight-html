@@ -42,6 +42,15 @@ span.spacer{
 .tdn{ text-decoration: none; }
 .uppercase{ text-transform: uppercase; }
 
+
+
+.f-code{
+    @include f-code;
+}
+.f-din{
+    @include f-din;
+}
+
 .fw-100{ font-weight: 100; }
 .fw-200{ font-weight: 200; }
 .fw-400{ font-weight: 400; }
