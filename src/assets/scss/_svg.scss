@@ -1,0 +1,109 @@
+.category-item__corners{
+    
+//    display: none;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .category-item__corner{
+        width: 45px;
+        height: 45px;
+        stroke-width:3;
+        stroke: $colorBlue;
+        position: absolute;
+        transition: 400ms;
+        &.left{
+            left: 0;
+        }
+        &.right{
+            x: calc(100% - 45px);
+        }
+        &.top{
+            top: 0;
+        }
+        &.bottom{
+            y: calc(100% - 45px);
+        }
+        &.top.left{
+            stroke-dasharray: 0,135;
+//            stroke-dasharray: 45,90;
+            stroke-dashoffset: 90;
+        }
+        &.top.right{
+            stroke-dasharray: 135, 90;
+            stroke-dashoffset: 45;
+        }
+        &.bottom.left{
+            stroke-dasharray: 90,90;
+            stroke-dashoffset: 90;
+        }
+        &.bottom.right{
+            stroke-dasharray: 90,90;
+            stroke-dashoffset: 135;
+        }
+        
+    }
+    rect{
+        
+        
+        
+//        stroke-dashoffset: 30,30;
+        
+    }
+}
+
+
+.svg-corner{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    .cls{
+        fill:none;
+        stroke: $colorBlue;
+        stroke-width: 3;
+    }
+    .cls-1{
+        transform: translateX(100%);
+        transition: 300ms;
+        transition-delay: 200ms;
+    }
+    .cls-2{
+        transform: translateY(-100%);
+        transition: 300ms;
+    }
+}
+.svg-c1{
+    left: 0;
+    top: 0;
+}
+.svg-c2{
+    right: 0;
+    top: 0;
+    transform: scale(-1,1);
+}
+.svg-c3{
+    left: 0;
+    bottom: 0;
+    transform: scale(1,-1);
+}
+.svg-c4{
+    right: 0;
+    bottom: 0;
+    transform: scale(-1,-1);
+}
+
+.category-item{
+    &:hover{
+        .cls-1{
+            transform: translateX(0);
+            transition: 300ms;
+        }
+        .cls-2{
+            transform: translateY(0);
+            transition: 300ms;
+            transition-delay: 200ms;
+        }
+    }
+}

@@ -7,3 +7,19 @@ mixin head(title)
 mixin nav-item(link_text, active)    
     li(class= active ? "nav-list__item nav-list__item_active" : "nav-list__item")
         a(href="#").nav-list__link= link_text
+        
+mixin category-item(photo, name, hover)
+    +b.A(href="#", class= hover ? "category-item hover" : "category-item")
+        +e.photo-wrpr
+            +e.IMG(src="/images/catalog-cards/"+photo).photo
+        +e.name
+            span!= name 
+        +svg-corners
+        
+        
+mixin svg-corners
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c1"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c2"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c3"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c4"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
+        
