@@ -54,6 +54,9 @@
     }
 }
 
+.svg-corners-parent{
+    position: relative;
+}
 
 .svg-corner{
     width: 45px;
@@ -94,7 +97,7 @@
     transform: scale(-1,-1);
 }
 
-.category-item{
+.svg-corners-parent{
     &:hover{
         .cls-1{
             transform: translateX(0);

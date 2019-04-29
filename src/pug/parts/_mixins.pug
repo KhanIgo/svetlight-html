@@ -9,17 +9,36 @@ mixin nav-item(link_text, active)
         a(href="#").nav-list__link= link_text
         
 mixin category-item(photo, name, hover)
-    +b.A(href="#", class= hover ? "category-item hover" : "category-item")
+    +b.A(href="#", class= hover ? "category-item svg-corners-parent hover" : "category-item svg-corners-parent")
         +e.photo-wrpr
             +e.IMG(src="/images/catalog-cards/"+photo).photo
         +e.name
             span!= name 
         +svg-corners
+
+  
+            
+mixin video-item(img, text)
+    +b.video-item
+        +e.poster-wrpr
+            +e.IMG(src="/images/video/"+img).poster
+        +e.btn-wrpr
+            +e.A(href="#").btn
+        +e.info
+            p!= text
+        
+mixin advantage-item(text, modifier)
+    +b(class="advantage_"+modifier)
+        +e.I(class="icon_"+modifier)
+        +e(class="text_"+modifier)
+            p!= text
+        
+    
         
         
 mixin svg-corners
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c1"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c2"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c3"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c4"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c2"><line class="cls cls-1" x2="45"/><line    class="cls cls-2" y1="45"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c3"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c4"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
         
