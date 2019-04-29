@@ -30,6 +30,14 @@ h6{
     font-weight: 300;
 }
 
+a{
+    color: $colorBlue;
+    transition: 350ms;
+    &:hover{
+//        color: $colorBlue-2;
+    }
+}
+
 span.spacer{
     display: inline-block;
     width: 100%;

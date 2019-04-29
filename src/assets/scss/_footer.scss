@@ -1,0 +1,17 @@
+.footer {
+    
+    &__container {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+    
+    
+    
+}
