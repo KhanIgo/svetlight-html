@@ -20,12 +20,13 @@ mixin category-item(photo, name, hover)
             
 mixin video-item(img, text)
     +b.video-item
-        +e.poster-wrpr
-            +e.IMG(src="/images/video/"+img).poster
-        +e.btn-wrpr
-            +e.A(href="#").btn
-        +e.info
-            p!= text
+        +e.inner
+            +e.poster-wrpr
+                +e.IMG(src="/images/video/"+img).poster
+            +e.btn-wrpr
+                +e.A(href="#").btn.btn_video
+            +e.info
+                p!= text
         
 mixin advantage-item(text, modifier)
     +b(class="advantage_"+modifier)

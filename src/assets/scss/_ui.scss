@@ -8,4 +8,12 @@
         padding: 0.6em 1.1em;
         border-radius: 2em;
     }
+    
+    &_video{
+        display: block;
+        width: 53px;
+        height: 53px;
+        background-color: white;
+        @include mask-image('../img/video-btn.svg');
+    }
 }
