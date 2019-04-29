@@ -1,0 +1,17 @@
+.c-purchase {
+    
+    &__container {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        align-items: center;
+    }
+    &__info-wrpr {}
+    &__title {}
+    &__sub-title {}
+    &__link {}
+    &__img-wrpr {}
+    &__img {}
+}

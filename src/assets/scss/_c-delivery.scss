@@ -1,0 +1,38 @@
+.c-delivery {
+    position: relative;
+    
+    &__bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/delivery-bg.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include mask-image('../img/mask-b-2.svg');
+        mask-size: cover;
+    }
+    
+    &__container {
+        position: relative;
+        z-index: 2;
+        color: white;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        align-items: center;
+    }
+    &__img-wrpr {}
+    &__img {}
+    &__info-wrpr {}
+    &__title {}
+    &__sub-title {}
+    &__more {}
+    &__link {}
+}
