@@ -1,16 +1,14 @@
 .index-advantages {
     padding-top: 80px;
     padding-bottom: 90px;
-    height: 23vw;
     mask-image: url('../img/mask-b-1.svg');
+    -webkit-mask-image: url('../img/mask-b-1.svg');
     mask-repeat: no-repeat;
     mask-size: cover;
-    -webkit-mask-image: url('../img/mask-b-1.svg');
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    
-    
+    mask-size: 100% 100%;
     background-color: $colorGrey;
+    
+    
     &__container {
         padding-left: 0;
         padding-right: 0;
@@ -23,6 +21,7 @@
     }
     
 }
+
 
 .advantage {
     width: 190px;

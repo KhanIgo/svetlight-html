@@ -7,8 +7,8 @@
     mask-position: bottom;
     -webkit-mask-image: url(../img/mask-slider.svg);
     -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    -webkit-mask-position: bottom;
+    -webkit-mask-size: 100% 100%;
+//    -webkit-mask-position: bottom;
     overflow: hidden;
 }
 

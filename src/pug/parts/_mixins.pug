@@ -33,10 +33,23 @@ mixin advantage-item(text, modifier)
         +e.I(class="icon_"+modifier)
         +e(class="text_"+modifier)
             p!= text
+            
+mixin text-input(modifier, placeholder)
+    +b(class="input-wrpr_text _"+modifier)
+        +b.INPUT(type="text", placeholder=""+placeholder, class="input_"+modifier)
         
-    
+mixin submit-input(modifier, label)
+    +b.input-item_submit
+        +e.BUTTON(type="submit", class="submit_"+modifier)!= label
+        
+mixin agree-check(modifier, label)
+    +b(class="input-wrpr_checkbox _agree _"+modifier)
+        +b.LABEL(class="label_"+modifier)
+            +b.INPUT(type="checkbox", class="input_agree _"+modifier)
+            span!= label
         
         
+                
 mixin svg-corners
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c1"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c2"><line class="cls cls-1" x2="45"/><line    class="cls cls-2" y1="45"/></svg>
