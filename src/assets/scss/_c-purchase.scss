@@ -1,13 +1,34 @@
 .c-purchase {
+    background-image: url('../img/blazon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    
     
     &__container {
         @include d-flex;
         align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        margin-top: -10px;
+        margin-bottom: -25px;
+        padding-right: 60px;
+        padding-left: 60px;
     }
-    &__info-wrpr {}
-    &__title {}
-    &__sub-title {}
-    &__link {}
+    &__info-wrpr {
+        text-align: right;
+    }
+    &__title {
+        margin-top: 17px;
+    }
+    &__sub-title {
+        margin-top: 3px;
+    }
+    &__link {
+        margin-top: 10px;
+        padding-left: 2.75em;
+        padding-right: 2.75em;
+    }
     &__img-wrpr {}
     &__img {}
 }

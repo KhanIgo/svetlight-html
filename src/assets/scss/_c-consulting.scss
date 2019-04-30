@@ -1,0 +1,43 @@
+.c-consulting {
+    height: 335px;
+    padding-top: 125px;
+    padding-bottom: 45px;
+    background-image: url('../img/bottom-form-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include mask-image('../img/bottom-form-mask.svg');
+    
+    &__container {
+        color: white;
+        &_titles{
+            text-align: center;
+        }
+        &_form{
+            margin-top: 38px;
+            padding-left: 50px;
+            padding-right: 0;
+        }
+    }
+    &__title_1{
+        margin-bottom: 15px;
+    }
+    &__title_2{
+        font-weight: 300;
+    }
+}
+
+
+.input-wrpr{
+    &_cons-1, &_cons-2{
+        width: 100%;
+        max-width: 320px;
+        flex: 0, 0, auto;
+        margin-right: 30px;
+    }
+    &_submit{
+        width: 100%;
+        max-width: 180px;
+        margin-right: 17px;
+    }
+}

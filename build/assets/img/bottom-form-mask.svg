@@ -1,14 +1,6 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="1280.006097pt" height="336.800879pt" viewBox="0 0 1280.006097 336.800879"
- preserveAspectRatio="xMidYMid meet">
-<metadata>
-Created by Potrace Professional 1.1m
-</metadata>
-<g transform="translate(0.006097,336.800879) rotate(-360.00) scale(0.095238,-0.095238)"
-fill="#000000" stroke="none">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280.006097 336.800879"
+ preserveAspectRatio="none">
+<g transform="translate(0.006097,336.800879) rotate(-360.00) scale(0.095238,-0.095238)" >
 <path d="M824 3527 c-302 -17 -574 -65 -735 -128 l-84 -34 -2 -1682 -3 -1683
 6720 0 6720 0 0 1680 0 1681 -55 -40 c-232 -169 -517 -291 -905 -386 -589
 -146 -1275 -204 -2248 -191 -1191 15 -2407 119 -4882 417 -1384 166 -2141 250

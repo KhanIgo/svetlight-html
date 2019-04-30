@@ -27,12 +27,30 @@
         display: -o-flex;
         display: flex;
         align-items: center;
+        padding: 155px 15px 135px 260px;
     }
-    &__img-wrpr {}
+    &__img-wrpr {
+        position: absolute;
+        left: 55px;
+        top: 25px;
+        z-index: 1;
+        margin-right: 20px;
+    }
     &__img {}
-    &__info-wrpr {}
-    &__title {}
+    &__info-wrpr {
+        text-align: right;
+        position: relative;
+        z-index: 2;
+        margin-right: 25px;
+    }
+    &__title {
+        text-transform: uppercase;
+    }
     &__sub-title {}
     &__more {}
-    &__link {}
+    &__link {
+        padding-left: 2.75em;
+        padding-right: 2.75em;
+        margin-bottom: 5px;
+    }
 }

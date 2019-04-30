@@ -1,0 +1,22 @@
+.form-horizontal{
+    &__form{
+        @include d-flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+.input-wrpr{
+    &_agree{
+        font-size: 0.8em;
+        max-width: 180px;
+        label{
+            @include d-flex;
+            align-items: center;
+        }
+        .checkbox-view{
+            margin-right: 10px;
+        }
+    }
+}
+

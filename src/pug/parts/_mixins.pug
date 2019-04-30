@@ -1,5 +1,4 @@
-include _bemto.pug
-//mixin mixin_name(title)
+include _bemto.pug 
 
 mixin head(title)
     include _head.pug
@@ -39,20 +38,26 @@ mixin text-input(modifier, placeholder)
         +b.INPUT(type="text", placeholder=""+placeholder, class="input_"+modifier)
         
 mixin submit-input(modifier, label)
-    +b.input-item_submit
-        +e.BUTTON(type="submit", class="submit_"+modifier)!= label
+    +b.input-wrpr_submit
+        +e.BUTTON(type="submit", class="submit_"+modifier+" btn_white btn_fw")!= label
         
 mixin agree-check(modifier, label)
     +b(class="input-wrpr_checkbox _agree _"+modifier)
-        +b.LABEL(class="label_"+modifier)
-            +b.INPUT(type="checkbox", class="input_agree _"+modifier)
+        +e.LABEL(class="label_"+modifier)
+            +b.checkbox-view
+                +e.INPUT(type="checkbox", class="input_checkbox _agree _"+modifier)
+                +e.span.checkbox-view-replacer
             span!= label
         
         
                 
 mixin svg-corners
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c1"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c2"><line class="cls cls-1" x2="45"/><line    class="cls cls-2" y1="45"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c3"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" class="svg-corner svg-c4"><line class="cls cls-1" x2="45"/><line class="cls cls-2" y1="45"/></svg>
-        
+    +svg-corner('svg-c1')
+    +svg-corner('svg-c2')
+    +svg-corner('svg-c3')
+    +svg-corner('svg-c4')
+
+mixin svg-corner(cssclass)
+    svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 45 45", class="svg-corner "+cssclass)
+        line(class="cls cls-1", x2="45")
+        line(class="cls cls-2", y1="45")

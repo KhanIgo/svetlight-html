@@ -1,19 +1,106 @@
-.btn{
+button {
+    outline: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn {
     text-decoration: none;
     display: inline-block;
-    &_blue{
+    text-transform: uppercase;
+    &_blue {
         background-color: $colorBlue;
         color: white;
-        
         padding: 0.6em 1.1em;
         border-radius: 2em;
+        //        border: solid 1px currentColor;
     }
-    
-    &_video{
+    &_white {
+        background-color: white;
+        color: $textColor;
+        padding: 0.6em 1.1em;
+        border-radius: 2em;
+        border: solid 1px currentColor;
+    }
+    &_bordered {
+        color: $textColor;
+        padding: 0.6em 1.1em;
+        border-radius: 2em;
+        border: solid 1px currentColor;
+    }
+    &_video {
         display: block;
         width: 53px;
         height: 53px;
         background-color: white;
         @include mask-image('../img/video-btn.svg');
+    }
+    &_wide {
+        padding: 0.6em 2em;
+    }
+    &_fw {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.input {
+    font-size: 1em;
+    padding: 1em;
+    &_text {}
+    &_i-white {
+        outline: none;
+        background-color: transparent;
+        border: solid 1px white;
+        border-radius: 2em;
+        padding: 0.6em 2.25em;
+    }
+    &_wide {
+        width: 100%;
+    }
+    &_checkbox {}
+}
+
+.checkbox-view {
+    width: 11px;
+    height: 11px;
+    position: relative;
+    flex: 0,0,auto;
+    &__input {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        +span.checkbox-view__span {
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+            border: solid 1px white;
+            border-radius: 2px;
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            &:before {
+                content: '';
+                display: block;
+                width: 12px;
+                height: 12px;
+                top: -4px;
+                left: -1px;
+                position: absolute;
+                background-color: $colorBlue;
+                @include mask-image('../img/checkbox.svg');
+                mask-size: contain;
+                opacity: 0;
+                transition: 300ms;
+            }
+        }
+        &:checked {
+            +span.checkbox-view__span:before {
+                opacity: 1;
+            }
+        }
     }
 }
