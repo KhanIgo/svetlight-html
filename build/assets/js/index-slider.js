@@ -14,7 +14,7 @@ jQuery($=>{
     
     
     
-    $('.js-slide-test').click(function(e){
+    $('.js-slide-next').click(function(e){
         e.preventDefault();
         slide_out();
     });
@@ -42,6 +42,7 @@ jQuery($=>{
             if($slide_next.length) $slide_next.addClass('slide-next')
         }
     }
+    
     
     function slide_out(){
         let $t1 = $slide_active.find('.b-index-slide__title'), 

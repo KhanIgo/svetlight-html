@@ -6,6 +6,7 @@
     <title>Главная</title>
     <link rel="stylesheet" href="assets/fonts/DINPro/font.css">
     <link rel="stylesheet" href="assets/fonts/CodePro/font.css">
+    <link rel="stylesheet" href="assets/libs/owlcarousel-2.3.4/assets/owl.carousel.css">
     <link rel="stylesheet" href="assets/css/style.css?a1">
   </head>
   <body>
@@ -32,52 +33,51 @@
       </nav>
     </div>
     <section class="c-index-slider row">
-      <div class="b-index-slide b-index-slide_item-1"><img class="b-index-slide__bg" src="/images/components/slider/slide-1-bg.jpg" alt="" role="presentation"/>
-        <div class="b-index-slide__container">
-          <div class="b-index-slide__text">
-            <div class="b-index-slide__title f-code">
-              <p>СВЕТОВОЕ ОБОРУДОВАНИЕ <br>танцевальных ПЛОЩАДОК</p>
+      <div class="c-index-carousel row p0" id="index-carousel">
+        <div class="b-index-slide b-index-slide_item-1"><img class="b-index-slide__bg" src="/images/components/slider/slide-1-bg.jpg" alt="" role="presentation"/>
+          <div class="b-index-slide__container">
+            <div class="b-index-slide__text">
+              <div class="b-index-slide__title f-code">
+                <p>СВЕТОВОЕ ОБОРУДОВАНИЕ <br>танцевальных ПЛОЩАДОК</p>
+              </div>
+              <div class="b-index-slide__decription">
+                <p>Наши специалисты выполнят разработку проекта и монтаж освещения <br>сцены с применением современного осветительного оборудования.</p>
+              </div>
             </div>
-            <div class="b-index-slide__decription">
-              <p>Наши специалисты выполнят разработку проекта и монтаж освещения <br>сцены с применением современного осветительного оборудования.</p>
+            <div class="b-index-slide__photo-wrpr"><img class="b-index-slide__photo" src="/images/components/slider/slide-1-photo.png" alt="" role="presentation"/>
             </div>
-          </div>
-          <div class="b-index-slide__photo-wrpr"><img class="b-index-slide__photo" src="/images/components/slider/slide-1-photo.png" alt="" role="presentation"/>
           </div>
         </div>
-      </div>
-      <div class="b-index-slide b-index-slide_item-2"><img class="b-index-slide__bg" src="/images/components/slider/slide-2-bg.jpg" alt="" role="presentation"/>
-        <div class="b-index-slide__container">
-          <div class="b-index-slide__text">
-            <div class="b-index-slide__title f-code fw-600">
-              <p>СВЕТОВОЕ ОБОРУДОВАНИЕ <br>концертных ПЛОЩАДОК</p>
+        <div class="b-index-slide b-index-slide_item-2"><img class="b-index-slide__bg" src="/images/components/slider/slide-2-bg.jpg" alt="" role="presentation"/>
+          <div class="b-index-slide__container">
+            <div class="b-index-slide__text">
+              <div class="b-index-slide__title f-code fw-600">
+                <p>СВЕТОВОЕ ОБОРУДОВАНИЕ <br>концертных ПЛОЩАДОК</p>
+              </div>
+              <div class="b-index-slide__decription">
+                <p>Наши специалисты выполнят разработку проекта и монтаж освещения <br>сцены с применением современного осветительного оборудования.</p>
+              </div>
             </div>
-            <div class="b-index-slide__decription">
-              <p>Наши специалисты выполнят разработку проекта и монтаж освещения <br>сцены с применением современного осветительного оборудования.</p>
+            <div class="b-index-slide__photo-wrpr b-index-slide__photo-wrpr_2"><img class="b-index-slide__photo" src="/images/components/slider/slide-2-photo.png" alt="" role="presentation"/>
             </div>
-          </div>
-          <div class="b-index-slide__photo-wrpr b-index-slide__photo-wrpr_2"><img class="b-index-slide__photo" src="/images/components/slider/slide-2-photo.png" alt="" role="presentation"/>
           </div>
         </div>
-      </div>
-      <div class="b-index-slide b-index-slide_item-3"><img class="b-index-slide__bg" src="/images/components/slider/slide-3-bg.jpg" alt="" role="presentation"/>
-        <div class="b-index-slide__container">
-          <div class="b-index-slide__text">
-            <div class="b-index-slide__title f-code fw-600">
-              <p>СВЕТОВОЕ ОБОРУДОВАНИЕ <br>театральных ПЛОЩАДОК</p>
+        <div class="b-index-slide b-index-slide_item-3"><img class="b-index-slide__bg" src="/images/components/slider/slide-3-bg.jpg" alt="" role="presentation"/>
+          <div class="b-index-slide__container">
+            <div class="b-index-slide__text">
+              <div class="b-index-slide__title f-code fw-600">
+                <p>СВЕТОВОЕ ОБОРУДОВАНИЕ <br>театральных ПЛОЩАДОК</p>
+              </div>
+              <div class="b-index-slide__decription">
+                <p>Наши специалисты выполнят разработку проекта и монтаж освещения <br>сцены с применением современного осветительного оборудования.</p>
+              </div>
             </div>
-            <div class="b-index-slide__decription">
-              <p>Наши специалисты выполнят разработку проекта и монтаж освещения <br>сцены с применением современного осветительного оборудования.</p>
+            <div class="b-index-slide__photo-wrpr b-index-slide__photo-wrpr_3"><img class="b-index-slide__photo" src="/images/components/slider/slide-3-photo.png" alt="" role="presentation"/>
             </div>
-          </div>
-          <div class="b-index-slide__photo-wrpr b-index-slide__photo-wrpr_3"><img class="b-index-slide__photo" src="/images/components/slider/slide-3-photo.png" alt="" role="presentation"/>
           </div>
         </div>
       </div>
     </section>
-    <div class="row">
-      <div class="container"><a class="btn btn_blue js-slide-test">тестировать</a></div>
-    </div>
     <section class="categories">
       <div class="categories__title">
         <h3 class="lite">КАТАЛОГ</h3>
@@ -414,11 +414,9 @@
         </div><a class="email-link email-link_in-footer" href="#"><i class="envelope"></i><span>info@mail.ru</span></a><a class="phone-link phone-link_in-footer" href="#"><i class="phone"></i><span>8 800 111-11-11</span></a>
       </div>
     </footer>
+    <script src="assets/libs/underscore/underscore-min.js"></script>
     <script src="assets/libs/jquery/jquery-3.3.1.min.js"></script>
-    <!--script(src='https://rawgit.com/peacepostman/wavify/master/jquery.wavify.js')-->
-    <!--script(src='https://rawgit.com/peacepostman/wavify/master/wavify.js')-->
-    <!---->
-    <!---->
+    <script src="assets/libs/owlcarousel-2.3.4/owl.carousel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/jquery.gsap.min.js"></script>
     <!--script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/ScrollToPlugin.min.js')-->
@@ -426,10 +424,9 @@
     <!--script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/ColorPropsPlugin.min.js' )-->
     <!--script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSRulePlugin.min.js' )-->
     <!--script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/EaselPlugin.min.js' )-->
-    <script src="assets/libs/underscore/underscore-min.js"></script>
-    <script src="assets/js/index-slider.js"></script>
     <!--script(src='assets/libs/mobile-detect/mobile-detect.min.js')-->
     <!--script(src='assets/js/responsive.js')-->
+    <script src="assets/js/index-carousel.js"></script>
     <script src="assets/js/main.js"></script>
     <script>jQuery(function($) {});</script>
   </body>
