@@ -11,7 +11,11 @@ html(lang='RU-ru')
         include components/index-slider/index.pug
         include components/categories-list/index.pug
         include components/index-advantages/index.pug
+        
+        - var modifier = '_in-index'
+        - var show_more_btn = true
         include components/index-videos/index.pug
+        
         include components/c-delivery/index.pug
         include components/c-purchase/index.pug
         include components/c-consulting/index.pug

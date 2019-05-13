@@ -1,10 +1,18 @@
 .video-row {
+    
+    &_in-index{
+        margin-top: -48px;
+    }
+    &_in-page{
+        margin-top: 25px;
+        margin-bottom: -80px;
+    }
+    
     &__container {
         &_title{
             text-align: center;
             position: relative;
             z-index: 4;
-            margin-top: -48px;
             h3{
                 font-weight: 300;
                 text-transform: uppercase;

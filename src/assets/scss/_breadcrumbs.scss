@@ -1,0 +1,29 @@
+.breadcrumbs-row{
+    background-color: $colorGrey;
+}
+.breadcrumbs-search-container{}
+.breadcrumbs-wrpr{}
+.breadcrumbs{
+    @include d-flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 30px 0;
+}
+
+
+.bc-item {
+    color: $bcTextColor;
+    &__link {
+        color: inherit;
+    }
+    &__border {
+        display: inline-block;
+        margin: 0 11px;
+        font-weight: 300;
+    }
+    &:last-child{
+        .bc-item__border{
+            display: none;
+        }
+    }
+}
