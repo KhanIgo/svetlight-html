@@ -54,6 +54,24 @@ mixin breadcrumb-item(text, is_active)
     +b.LI.bc-item
         +e.A(href="#").link!= text
         +e.SPAN.border /
+        
+mixin product-loop(img, name, desc, price)
+    +b.product-loop
+        +e.image-wrpr
+            +e.IMG(src=''+img).photo
+        +e.name
+            p!= name
+        +e.description
+            p!= desc
+        +e.add-to-cart-wrpr
+            +b.qty-control
+                +e.A(href="#").decrement -
+                +e.INPUT(type="text", name="qty", value="1")
+                +e.A(href="#").increment +
+            +b.A(href="#").add-to-cart В комплект
+                
+            
+        
 
                 
 mixin svg-corners
