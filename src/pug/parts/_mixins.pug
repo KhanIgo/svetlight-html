@@ -58,11 +58,16 @@ mixin breadcrumb-item(text, is_active)
 mixin product-loop(img, name, desc, price)
     +b.product-loop
         +e.image-wrpr
-            +e.IMG(src=''+img).photo
+            +e.IMG(src=''+img).image
         +e.name
             p!= name
         +e.description
             p!= desc
+        +e.price
+            p
+                span!= price
+                span P
+            
         +e.add-to-cart-wrpr
             +b.qty-control
                 +e.A(href="#").decrement -
