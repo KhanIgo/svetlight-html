@@ -1,0 +1,20 @@
+.equip-questions-row{
+    height: 300px;
+    background: $colorGrey;
+    @include mask('../img/mask-equip-questions.svg');
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-position: left;
+    mask-position: left;
+    
+    &__container{
+        height: 100%;
+        @include d-flex;
+        align-items: center;
+        padding-left: 120px;
+//        justify-content: center;
+    }
+    &__title{
+        margin-right: 20px;
+    }
+}

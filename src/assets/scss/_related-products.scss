@@ -1,0 +1,19 @@
+.related-products-row {
+    &__container {
+        
+    }
+    &__container_title{
+        margin-top: -30px;
+        position: relative;
+    }
+    &__title {}
+    
+    &__container_products{
+        justify-content: space-between;
+        margin-top: 30px;
+        .product-loop{
+            margin-bottom: 20px;
+        }
+    }
+    
+}

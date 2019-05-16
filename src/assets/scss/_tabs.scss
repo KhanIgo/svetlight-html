@@ -1,0 +1,46 @@
+.product-tabs {
+    margin-top: 40px;
+//    
+    &__row_headers{
+        background-color: $colorGrey;
+        padding: 10px 0;
+    }
+    &__row_contents{}
+    
+    &__container {}
+    &__container_headers{}
+    &__container_contents{}
+    
+}
+
+.tab-headers {
+    list-style: none;
+    @include d-flex;
+    flex-wrap: wrap;
+    
+    &__item {
+        margin: 0 30px;
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+    &__link {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+    
+
+.tab-content {
+    list-style: none;
+    display: block;
+    &__item {
+        display: block;
+        
+        &:first-child{
+            width: 100%;
+            height: 400px;
+        }
+    }
+}
+    

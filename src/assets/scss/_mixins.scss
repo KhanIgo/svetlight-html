@@ -21,6 +21,10 @@
     mask-size: contain;
     mask-repeat: no-repeat;
 }
+@mixin mask($img){
+    @include mask-image($img);
+}
+
 @mixin flex-with-icon{
     display: -webkit-flex;
     display: -moz-flex;
