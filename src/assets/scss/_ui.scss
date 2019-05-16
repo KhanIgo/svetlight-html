@@ -15,6 +15,13 @@ button {
         border-radius: 2em;
         //        border: solid 1px currentColor;
     }
+    &_green {
+        background-color: $colorGreen;
+        color: white;
+        padding: 0.6em 1.1em;
+        border-radius: 2em;
+        //        border: solid 1px currentColor;
+    }
     &_white {
         background-color: white;
         color: $textColor;

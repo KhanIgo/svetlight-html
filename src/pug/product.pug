@@ -1,14 +1,16 @@
 doctype html
 include parts/_mixins.pug
 html(lang='RU-ru')
-    +head('Каталог')
+    +head('Страница товара')
     
     body
         
         include parts/_header.pug
         include parts/_nav.pug
-        include components/с-breadcrumbs_catalog/index.pug
-        include components/с-catalog-page/index.pug
+        include components/с-breadcrumbs_product/index.pug
+        
+        include components/c-product-info/index.pug
+        include components/c-product-tabs/index.pug
         
         include components/c-consulting/index.pug
         include parts/_footer.pug

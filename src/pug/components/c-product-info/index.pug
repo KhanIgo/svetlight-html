@@ -1,0 +1,35 @@
++b.SECTION.product-main-info.row
+    +e.container.container
+        +e.photo-big
+            +b.product-photo-slider
+                +e.item
+                    +e.A(href="#").link
+                        +e.IMG(src="/images/main-photo.jpg").image
+
+        +e.info
+            +b.product-thumbs
+                +e.item
+                    +e.A(href="#").link
+                        +e.IMG(src="/images/thumb-photo.jpg").image
+
+            +e.name 
+                h5 JBL MD55
+                
+            +b.article 
+                +e.SPAN.title Артикул:
+                +e.SPAN.value 94053-495
+                
+            +e.description 
+                p BAR, 6 светодиодов по 12 Вт, RGBWA+UV, аккумулятор, Wi-DMX
+            
+            +e.price-and-add
+                +b.price_in-product-page
+                    +e.SPAN.title_in-product-page Цена:
+                    +e.SPAN.value_in-product-page 40 000 руб
+                    
+                +e.add-to-cart-wrpr
+                    include ../../blocks/b-qty-control/index.pug
+                    
+            +e.actions
+                +e.A(href="#").quick-buy.btn_green Быстрая покупка
+                +e.A(href="#").to-setup.btn_blue Добавить в мой комплект

@@ -57,27 +57,20 @@ mixin breadcrumb-item(text, is_active)
         
 mixin product-loop(img, name, desc, price)
     +b.product-loop
-        +e.image-wrpr
+        +e.A(href="/product.html").image-wrpr
             +e.IMG(src=''+img).image
         +e.name
-            p!= name
+            A(href="/product.html")!= name
         +e.description
-            p!= desc
+            A(href="/product.html")!= desc
         +e.price
             p
                 span!= price
                 span P
             
         +e.add-to-cart-wrpr
-            +b.qty-control
-                +e.A(href="#").decrement -
-                +e.INPUT(type="text", name="qty", value="1")
-                +e.A(href="#").increment +
+            include ../blocks/b-qty-control/index.pug
             +b.A(href="#").add-to-cart В комплект
-                
-            
-        
-
                 
 mixin svg-corners
     +svg-corner('svg-c1')
