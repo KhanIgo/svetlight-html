@@ -52,6 +52,16 @@ button {
     &_c-black{
         color: black;
     }
+  &_del{
+    width: 13px;
+    height: 14px;
+    color: inherit;
+    background-color: currentColor;
+    @include mask-image('../img/icon-cart-del.svg');
+    &:hover{
+      color: red;
+    }
+  }
 }
 
 .input {

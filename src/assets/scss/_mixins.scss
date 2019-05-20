@@ -37,3 +37,8 @@
     text-decoration: none;
     color: inherit;
 }
+
+@mixin cart-column-font{
+  font-weight: 500;
+  font-size: 1.5em;
+}

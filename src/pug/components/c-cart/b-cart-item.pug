@@ -1,0 +1,15 @@
++b.b-cart-row_item
+    +e.prod-info
+      +e.photo-wrpr
+        +e.IMG(src="/images/cart-product-photo.jpg").photo
+      +e.name
+        p JBL MD55 (25)
+    +e.price
+      p 40 000 руб
+    +e.qty
+      - var qc_mod = 'type-2'
+      include ../../blocks/b-qty-control/index.pug
+    +e.total-price
+      p 40 000 руб
+    +e.actions
+      +e.A(href="#").del.btn_del
