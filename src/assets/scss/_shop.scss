@@ -357,6 +357,7 @@
   width: 100%;
   position: relative;
   padding: 15px 0;
+  
   &_header {
     font-weight: 600;
     font-size: 1.13em;
@@ -371,6 +372,10 @@
     border-left: 0;
     border-right: 0;
   }
+  &_footer{
+    margin-top: 30px;
+  }
+  
   &__prod-info {
     flex: 40% 0 0;
     @include d-flex;
@@ -409,10 +414,23 @@
     margin-left: 3%;
     padding-top: 5px;
     @include cart-column-font;
+    &_in-footer{
+      margin-left: 40%;
+      flex-grow: 0;
+      margin-right: 9%;
+      padding-top: 0;
+      .title{
+        font-weight: 300;
+        font-size: 0.7em;
+      }
+    }
   }
   &__actions {
     padding-top: 17px;
     margin-right: -15px;
+    &_in-footer{
+      padding-top: 0;
+    }
   }
   
 }
