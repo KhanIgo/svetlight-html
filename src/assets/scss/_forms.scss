@@ -1,5 +1,5 @@
 .form-horizontal{
-    &__form{
+    &__form, form{
         @include d-flex;
         flex-wrap: wrap;
         align-items: center;
@@ -20,3 +20,9 @@
     }
 }
 
+.wpcf7-response-output{
+    border: none !important;
+    padding: 0 !important;
+    margin: 1em 0em 0em !important;
+    font-size: 0.8em;
+}

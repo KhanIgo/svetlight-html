@@ -10,8 +10,11 @@
     display: -o-flex;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+//    justify-content: space-between;
+      justify-content: center;
     padding-top: 15px;
+      padding-left: 0;
+      padding-right: 0;
   }
 }
 
@@ -28,6 +31,7 @@
   text-decoration: none;
   color: inherit;
   transition: 400ms ease-in-out;
+    margin: 3px;
   &:hover {
     color: $colorBlue;
     .category-item {
@@ -36,10 +40,7 @@
       }
     }
     .category-item__corners {
-      //            display: block !important;
       .top.left {
-        //                stroke-dasharray: 45,90;
-        //                stroke-dashoffset: 0;
       }
     }
   }
@@ -54,10 +55,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+      overflow: hidden;
   }
   &__photo {
     display: block;
     transition: 400ms ease-in-out;
+      max-width: 100%;
+      max-height: 100%;
   }
   &__name {
     text-align: center;
@@ -89,9 +93,13 @@
   }
   &__container_products {
     @include d-flex;
-    justify-content: space-between;
+//    justify-content: space-between;
+      justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
+      padding-left: 0;
+      padding-right: 0;
+      
   }
 }
 
@@ -104,6 +112,7 @@
   border-radius: 5px;
   text-align: center;
   padding-bottom: 20px;
+    margin: 20px 10px 20px 10px;
   &__image-wrpr {
     text-decoration: none;
     width: 100%;
@@ -180,11 +189,16 @@
     height: 480px;
     border: solid 1px $colorProdBorder;
     margin-right: 80px;
+      flex-shrink: 0;
   }
   &__info {
     @include d-flex;
     flex-direction: column;
     flex-grow: 1;
+      max-width: 480px;
+      *{
+          max-width: 100%;
+      }
   }
   &__name {
     margin-top: 63px;
@@ -238,10 +252,14 @@
 }
 
 .product-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    
   &__item {
     width: 90px;
     height: 90px;
     border: solid 1px $colorProdBorder;
+      margin-right: 10px;
   }
   &__link {
     display: block;

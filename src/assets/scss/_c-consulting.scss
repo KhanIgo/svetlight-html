@@ -1,5 +1,5 @@
 .c-consulting {
-    height: 335px;
+    min-height: 335px;
     padding-top: 125px;
     padding-bottom: 45px;
     background-image: url('../img/bottom-form-bg.jpg');
@@ -7,6 +7,7 @@
     background-repeat: no-repeat;
     background-position: center;
     @include mask-image('../img/bottom-form-mask.svg');
+    transition: 500ms;
     
     &__container {
         color: white;
@@ -29,6 +30,16 @@
 
 
 .input-wrpr{
+    input{
+        color: white;
+    }
+    input[type=checkbox]{
+        @extend .checkbox-view__input;
+        &+.wpcf7-list-item-label{
+            display: none !important;
+        }
+        
+    }
     &_cons-1, &_cons-2{
         width: 100%;
         max-width: 320px;
@@ -39,5 +50,11 @@
         width: 100%;
         max-width: 180px;
         margin-right: 17px;
+        position: relative;
+    }
+    .ajax-loader{
+        position: absolute;
+        right: 5px;
+        top: calc( 50% - 8px );
     }
 }

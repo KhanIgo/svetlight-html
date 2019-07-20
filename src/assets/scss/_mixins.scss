@@ -6,6 +6,9 @@
 @mixin f-din{
     font-family: "DIN Pro";
 }
+@mixin f-arial{
+    font-family: "Arial";
+}
 
 @mixin d-flex{
     display: -webkit-flex;

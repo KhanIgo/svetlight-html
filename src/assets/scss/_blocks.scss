@@ -1,7 +1,14 @@
 .logo-link {
     margin-right: auto;
+    max-width: 225px;
     &:hover {}
-    &__logo {}
+    &__logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+    
     &_in-footer{
         margin-right: 40px;
     }
@@ -11,6 +18,7 @@
 .email-link {
     @include flex-with-icon;
     @include header-link;
+    @include f-arial;
     text-transform: uppercase;
     margin-right: 43px;
     span {}
@@ -19,6 +27,7 @@
 .phone-link {
     @include flex-with-icon;
     @include header-link;
+    @include f-arial;
     margin-right: 35px;
     text-transform: uppercase;
     &_in-footer{

@@ -9,6 +9,9 @@ var pug = require("gulp-pug");
 var del = require("del");
 var rs = require("run-sequence");
 
+var copyToServer = true;
+
+
 gulp.task( 'server', ['scss', 'pug', 'copy:js', 'copy:libs', 'copy:img', 'copy:fonts'], function(){
     bs.init({
         server: {
@@ -26,6 +29,28 @@ gulp.task( 'server', ['scss', 'pug', 'copy:js', 'copy:libs', 'copy:img', 'copy:f
     gulp.watch( 'src/assets/js/**/*.js').on('change', bs.reload );
 });
 gulp.task('scss', function () {
+    
+    if(copyToServer){
+        gulp.src('src/assets/scss/style.scss')
+            .pipe(plumber({
+                errorHandler: notify.onError(function(err){
+                    return {
+                        title: 'Styles',
+                        message: err.message
+                    }
+                })
+            }))
+            .pipe( sourcemaps.init() )
+            .pipe( sass() )
+            .pipe( prefixer({
+                browsers: ['last 5 versions'],
+                cascade: false
+            }) )
+            .pipe( sourcemaps.write() )        
+            .pipe( gulp.dest('./../wp/site/wp-content/themes/zest-space/assets/css') )
+            .pipe( bs.stream() );
+    }
+    
     return gulp.src('src/assets/scss/style.scss')
         .pipe(plumber({
             errorHandler: notify.onError(function(err){
@@ -73,6 +98,16 @@ gulp.task('copy:libs', function(){
         .pipe( bs.stream() );
 });
 gulp.task('copy:img', function(){
+    if(copyToServer){
+        gulp.src('src/assets/img/**/*.*')
+        .pipe( gulp.dest('./../wp/site/wp-content/themes/zest-space/assets/img') )
+        .pipe( bs.stream() );
+        
+        gulp.src('src/images/**/*.*')
+        .pipe( gulp.dest('./../wp/site/images') )
+        .pipe( bs.stream() );
+    }
+    
     gulp.src('src/assets/img/**/*.*')
         .pipe( gulp.dest('build/assets/img') )
         .pipe( bs.stream() );

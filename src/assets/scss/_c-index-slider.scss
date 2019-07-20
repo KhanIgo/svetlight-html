@@ -11,6 +11,8 @@
 //    -webkit-mask-position: bottom;
     overflow: hidden;
     position: relative;
+    z-index: 1;
+    margin-top: -40px;
     
     
     .owl-item{
