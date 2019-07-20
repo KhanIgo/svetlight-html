@@ -8,11 +8,11 @@
         object-fit: contain;
         object-position: center;
     }
-    
+
     &_in-footer{
         margin-right: 40px;
     }
-    
+
 }
 
 .email-link {
@@ -20,7 +20,8 @@
     @include header-link;
     @include f-arial;
     text-transform: uppercase;
-    margin-right: 43px;
+    margin-right: 30px;
+    font-weight: 600;
     span {}
 }
 
@@ -28,8 +29,9 @@
     @include flex-with-icon;
     @include header-link;
     @include f-arial;
-    margin-right: 35px;
+    margin-right: 23px;
     text-transform: uppercase;
+    font-weight: 600;
     &_in-footer{
         margin-right: 25px;
     }
@@ -37,7 +39,7 @@
 
 .call-btn {
     text-transform: uppercase;
-    margin-right: 20px;
+    margin-right: 5px;
     span {}
 }
 

@@ -2,6 +2,11 @@
     @include flex-with-icon;
     @include header-link;
 
+    border: solid 1px #a2a2a2;
+    border-radius: 25px;
+    padding: 5px 15px;
+
+
     .mini-cart__empty {
         text-transform: uppercase;
     }
@@ -11,10 +16,9 @@
     }
 
     .mini-cart__qty {
-        
+
     }
 
     .mini-cart__total {
     }
 }
-

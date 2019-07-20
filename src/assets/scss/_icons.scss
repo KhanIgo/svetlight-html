@@ -1,27 +1,54 @@
 i{
     display: block;
     &.envelope {
-        @include mask-image('../img/envelope.svg');
-        width: 30px;
-        height: 23px;
-        background-color: currentColor;
+        // @include mask-image('../img/envelope.svg');
+        // width: 30px;
+        // height: 23px;
+        // background-color: currentColor;
+        background-image: url('../img/001-envelope.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 29px;
+        height: 29px;
+        flex-shrink: 0;
+        flex-grow: 0;
         transition: inherit;
+        margin-top: -8px;
         margin-right: 12px;
     }
     &.phone {
-        @include mask-image('../img/phone-call.svg');
-        width: 30px;
-        height: 27px;
-        background-color: currentColor;
-        transition: inherit;
-        margin-right: 12px;
-    }
-    &.cart-icon{
-        @include mask-image('../img/shopping-cart.svg');
+        // @include mask-image('../img/phone-call.svg');
+        // width: 30px;
+        // height: 27px;
+        // background-color: currentColor;
+        background-image: url('../img/002-phone.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
         width: 29px;
         height: 29px;
-        background-color: currentColor;
+        flex-shrink: 0;
+        flex-grow: 0;
         transition: inherit;
-        margin-right: 14px;
+        margin-right: 12px;
+        margin-top: -4px;
+    }
+    &.cart-icon{
+        // @include mask-image('../img/shopping-cart.svg');
+        // width: 29px;
+        // height: 29px;
+        // background-color: currentColor;
+        background-image: url('../img/cart.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 29px;
+        height: 29px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        transition: inherit;
+        margin-right: 10px;
+        margin-top: -2px;
     }
 }
