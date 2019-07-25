@@ -1,0 +1,25 @@
+{
+  "smartIndent": true,
+  "spaceUnits": 2,
+  "useTabChar": false,
+  "language": {
+    "javascript": {
+      "linting.prefer": ["ESLint"],
+      "linting.usePreferredOnly": true
+    }
+  },
+
+  "brackets-file-tree-exclude.excludeList": [
+		"/.git/",
+		"/.git/",
+		"/.gitignore",
+      "gulpfile.js",
+      ".brackets.json",
+      "package.json",
+      "package-lock.json",
+    ".DS_Store",
+    "README.md",
+        "/bower_components/",
+        "/node_modules/"
+    ]
+} 

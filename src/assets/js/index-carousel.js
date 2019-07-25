@@ -23,7 +23,6 @@ jQuery($=>{
         autoplaySpeed: 1000,
         autoplayHoverPause: true,
         navigation: true
-        
     };
     jqCarousel = $('#index-carousel');    
     jqCarousel.on('initialized.owl.carousel', function(event){

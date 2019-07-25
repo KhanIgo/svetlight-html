@@ -14,10 +14,19 @@
             span 8 (4212) 644-622
         +b.A(href="#").call-btn_in-header.btn_blue
             span ЗАКАЗАТЬ ЗВОНОК
-        +b.A(href="/cart.html").mini-cart_in-header
+        +b.SPAN.mini-cart_in-header._is-not-empty.js-minicart
             i.cart-icon
+            +e.A(href="/cart.html").link
             +e.SPAN.empty мой комплект
             +e.SPAN.not-empty 
                 +e.SPAN.qty (99)
                 +e.SPAN.total 100 000
+            
+            +e.to-catalog
+                +e.to-catalog-corner
+                +e.to-catalog-text
+                    span вам нужно собрать  свой КОМПЛЕКТ?
+                +e.A(href="#").to-catalog-btn.btn_blue._fw В каталог
+
+
             

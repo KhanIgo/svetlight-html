@@ -1,0 +1,17 @@
+//+b.popup-form-window_call-form._is-active
++b.popup-form-window_call-form
+    +e.BUTTON.close -
+    +e.inner
+
+        +e.title 
+            h2 укажите ваши контактные данные
+        +e.subtitle 
+            h5 И мы вам перезвоним
+        +e.form-wrpr
+            +b.FORM.callback-form
+                +text-input('name _text _i-white _call-1 _wide _border-dg', 'Ваше имя')
+                +text-input('phone _text _i-white _call-2 _wide _border-dg', 'Ваш телефон')
+                +submit-input('callback', 'отправить')
+                +agree-check-grey('agree-wide', 'Я согласен с политикой конфиденциальности')
+                
+                

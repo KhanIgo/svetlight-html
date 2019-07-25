@@ -22,7 +22,8 @@
     "node-sass": "^4.11.0",
     "pug": "^2.0.3",
     "run-sequence": "^2.2.1",
-    "sass": "^1.15.3"
+    "sass": "^1.15.3",
+    "yargs": "^13.3.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1"

@@ -113,6 +113,78 @@
   text-align: center;
   padding-bottom: 20px;
     margin: 20px 10px 20px 10px;
+    position: relative;
+    overflow: hidden;
+    &__loader{
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(255,255,255,0.75);
+        opacity: 0;
+        visibility: hidden;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 11;
+            width: 60px;
+            height: 60px;
+            background: url('../img/loader.png') no-repeat;
+            background-size: contain;
+            top: calc( 50% - 30px );
+            left: calc( 50% - 30px );
+            opacity: 0.8;
+            animation-name: spin;
+            animation-duration: 3000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+    &__added{
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(255,255,255,0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: 350ms;
+        
+        &-title{
+            line-height: 1em;
+            font-size: 1.5em;    
+            opacity: 0;
+            transform: translateY( 100% );
+            transition: 500ms;
+        }
+    }
+    &_adding{
+        .product-loop__loader{
+            opacity: 1;
+            visibility: visible;
+            transition: 350ms;
+        }
+    }
+    &_added{
+        .product-loop__added{
+            opacity: 1;
+            visibility: visible;
+            &-title{
+                opacity: 1;
+                transform: translateY( 0 );
+            }
+        }
+    }
   &__image-wrpr {
     text-decoration: none;
     width: 100%;
@@ -189,7 +261,9 @@
     height: 480px;
     border: solid 1px $colorProdBorder;
     margin-right: 80px;
-      flex-shrink: 0;
+    flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
   }
   &__info {
     @include d-flex;
@@ -232,10 +306,12 @@
 }
 
 .product-photo-slider {
-  width: 100%;
-  height: 100%;
+//  width: 100%;
+//  height: 100%;
   &__item {
-    height: 100%;
+        width: 100%;
+        max-width: 560px;
+        height: 480px;
   }
   &__link {
     display: block;
@@ -249,17 +325,40 @@
     object-fit: contain;
     object-position: center;
   }
+    
+    .owl-item{
+        float: left;    
+    }
+    .owl-nav{
+        a{
+            width: 45px;
+            background-color: rgba(0,0,0, 0.03);
+        }
+    }
 }
 
 .product-thumbs {
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+    width: 390px;
     
+    &__slider{
+        max-width: none;
+        
+        &:not(.owl-loaded){
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
   &__item {
-    width: 90px;
+    min-width: 90px;
+    max-width: 90px;
     height: 90px;
     border: solid 1px $colorProdBorder;
-      margin-right: 10px;
+    margin-right: 10px;
   }
   &__link {
     display: block;
@@ -272,7 +371,61 @@
     object-fit: contain;
     object-position: center;
   }
+    
+    
+    .owl-item{
+        float: left;    
+    }
 }
+
+
+.owl-nav{
+    a, button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        text-decoration: none;
+        height: 100%;
+        width: 35px;
+        top: 0;
+        background-color: rgba(0,0,0, 0.4);
+        z-index: 20;
+        cursor: pointer;
+    }
+    i{
+        display: block;
+        width: 20px;
+        height: 30px;
+
+//        background-image: url('../img/slider-arrow.svg');
+//        background-repeat: no-repeat;
+//        background-size: contain;
+//        background-position: center;
+        
+        mask-image: url('../img/slider-arrow.svg');
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-position: center;
+        
+        background-color: #fff;
+        &.owl-arrow_inverse{
+            background-color: #000;
+        }
+        &.owl-arrow_prev{
+            transform: rotate(180deg);
+        }
+    }
+    
+    
+    .owl-prev{
+        left: 0;
+    }
+    .owl-next{
+        right: 0;
+    }
+}
+
 
 .price {
   &__title {

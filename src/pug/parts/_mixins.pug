@@ -3,9 +3,12 @@ include _bemto.pug
 mixin head(title)
     include _head.pug
     
-mixin nav-item(link_text, active, url)    
+mixin nav-item(link_text, active, url, sub)    
     li(class= active ? "nav-list__item nav-list__item_active" : "nav-list__item")
         a(href=""+url).nav-list__link= link_text
+        if sub
+            include _nav-submenu 
+
         
 mixin category-item(photo, name, hover)
     +b.A(href="#", class= hover ? "category-item svg-corners-parent hover" : "category-item svg-corners-parent")
@@ -40,6 +43,10 @@ mixin text-input(modifier, placeholder)
 mixin submit-input(modifier, label)
     +b.input-wrpr_submit
         +e.BUTTON(type="submit", class="submit_"+modifier+" btn_white btn_fw")!= label
+
+mixin submit-input(modifier, label)
+    +b.input-wrpr_submit
+        +e.BUTTON(type="submit", class="submit_"+modifier+" btn_blue btn_fw")!= label
         
 mixin agree-check(modifier, label)
     +b(class="input-wrpr_checkbox _agree _"+modifier)
@@ -48,6 +55,15 @@ mixin agree-check(modifier, label)
                 +e.INPUT(type="checkbox", class="input_checkbox _agree _"+modifier)
                 +e.span.checkbox-view-replacer
             span!= label
+
+mixin agree-check-grey(modifier, label)
+    +b(class="input-wrpr_checkbox _agree _"+modifier)
+        +e.LABEL(class="label_"+modifier)
+            +b.checkbox-view
+                +e.INPUT(type="checkbox", class="input_checkbox _agree _"+modifier)
+                +e.span_grey.checkbox-view-replacer
+            span!= label
+            
         
 
 mixin breadcrumb-item(text, is_active)
@@ -57,6 +73,12 @@ mixin breadcrumb-item(text, is_active)
         
 mixin product-loop(img, name, desc, price)
     +b.product-loop
+        +e.loader
+        +e.added
+            +e.added-title
+                p Товар добавлен в ваш комплект
+            +e.added-desc
+                
         +e.A(href="/product.html").image-wrpr
             +e.IMG(src=''+img).image
         +e.name
