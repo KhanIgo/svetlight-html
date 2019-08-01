@@ -10,16 +10,16 @@
   },
 
   "brackets-file-tree-exclude.excludeList": [
-		"/.git/",
-		"/.git/",
-		"/.gitignore",
-      "gulpfile.js",
-      ".brackets.json",
-      "package.json",
-      "package-lock.json",
+    "/.git/",
+    "/.git/",
+    "/.gitignore",
+    "gulpfile.js",
+    ".brackets.json",
+    "package.json",
+    "package-lock.json",
     ".DS_Store",
     "README.md",
-        "/bower_components/",
-        "/node_modules/"
-    ]
-} 
+    "/bower_components/",
+    "/node_modules/"
+  ]
+}

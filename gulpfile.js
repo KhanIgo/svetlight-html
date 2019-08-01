@@ -10,136 +10,186 @@ var del = require("del");
 var rs = require("run-sequence");
 var args = require('yargs').argv;
 
+
+var onlyAssets = args.onlyAssets || 'no';
 var copyToServer = args.cts || 'no';
 var serverPath = './../wp/site/wp-content/themes/zest-space/assets';
 var serverPathCss = serverPath + '/css';
-var serverPathJs = serverPath +'/js';
-var serverPathImg = serverPath +'/img';
+var serverPathJs = serverPath + '/js';
+var serverPathImg = serverPath + '/img';
 var serverPathImages = './../wp/site/images';
 
-gulp.task( 'server', ['scss', 'pug', 'copy:js', 'copy:libs', 'copy:img', 'copy:fonts'], function(){
-    bs.init({
-        server: {
-            baseDir: 'build/'
-        }
+
+if (onlyAssets == 'yes') {
+    gulp.task('server', ['scss', 'copy:js', 'copy:img'], function () {
+        gulp.watch('src/assets/scss/**/*.scss', ['scss']);
+        gulp.watch('src/assets/js/**/*.js', ['copy:js']);
+        gulp.watch('src/assets/libs/**/*.*', ['copy:libs']);
+        gulp.watch('src/assets/img/**/*.*', ['copy:img']);
+        gulp.watch('src/images/**/*.*', ['copy:img']);
     });
-
-    gulp.watch( 'src/pug/**/*.*', ['pug'] );
-    gulp.watch( 'src/assets/scss/**/*.scss', ['scss'] );
-    gulp.watch( 'src/assets/js/**/*.js', ['copy:js'] );
-    gulp.watch( 'src/assets/libs/**/*.*', ['copy:libs'] );
-    gulp.watch( 'src/assets/img/**/*.*', ['copy:img'] );
-    gulp.watch( 'src/images/**/*.*', ['copy:img'] );
-    gulp.watch( 'src/assets/fonts/**/*.*', ['copy:fonts'] );
-    gulp.watch( 'src/assets/js/**/*.js').on('change', bs.reload );
-});
-gulp.task('scss', function () {
-
-    if(copyToServer == 'yes'){
-        gulp.src('src/assets/scss/style.scss')
+    gulp.task('scss', function () {
+        return gulp.src('src/assets/scss/style.scss')
             .pipe(plumber({
-                errorHandler: notify.onError(function(err){
+                errorHandler: notify.onError(function (err) {
                     return {
                         title: 'Styles',
                         message: err.message
                     }
                 })
             }))
-            .pipe( sourcemaps.init() )
-            .pipe( sass() )
-            .pipe( prefixer({
+            .pipe(sourcemaps.init())
+            .pipe(sass())
+            .pipe(prefixer({
                 browsers: ['last 5 versions'],
                 cascade: false
-            }) )
-            .pipe( sourcemaps.write() )
-            .pipe( gulp.dest(serverPathCss) )
-            .pipe( bs.stream() );
-    }
-
-    return gulp.src('src/assets/scss/style.scss')
-        .pipe(plumber({
-            errorHandler: notify.onError(function(err){
-                return {
-                    title: 'Styles',
-                    message: err.message
-                }
-            })
-        }))
-        .pipe( sourcemaps.init() )
-        .pipe( sass() )
-        .pipe( prefixer({
-            browsers: ['last 5 versions'],
-            cascade: false
-        }) )
-        .pipe( sourcemaps.write() )
-        .pipe( gulp.dest('build/assets/css') )
-        .pipe( bs.stream() );
-});
-gulp.task('pug', function(){
-    return gulp.src('src/pug/*.pug')
-        .pipe(plumber({
-            errorHandler: notify.onError(function(err){
-                return {
-                    title: 'Pug',
-                    message: err.message
-                }
-            })
-        }))
-        .pipe( pug({
-            pretty: true
-        }) )
-        .pipe( gulp.dest('build') )
-        .pipe( bs.stream() );
-});
-gulp.task('copy:js', function(){
-    if(copyToServer == 'yes'){
-        gulp.src('src/assets/js/**/*.*')
-            .pipe( gulp.dest(serverPathJs) )
-            .pipe( bs.stream() );
-    }
-
-
-    return gulp.src('src/assets/js/**/*.*')
-        .pipe( gulp.dest('build/assets/js') )
-        .pipe( bs.stream() );
-
-});
-gulp.task('copy:libs', function(){
-    return gulp.src('src/assets/libs/**/*.*')
-        .pipe( gulp.dest('build/assets/libs') )
-        .pipe( bs.stream() );
-});
-gulp.task('copy:img', function(){
-    if(copyToServer == 'yes'){
+            }))
+            .pipe(sourcemaps.write())
+            .pipe(gulp.dest(serverPathCss));
+    });
+    gulp.task('copy:js', function () {
+        return gulp.src('src/assets/js/**/*.*')
+            .pipe(gulp.dest(serverPathJs));
+    });
+    gulp.task('copy:img', function () {
         gulp.src('src/assets/img/**/*.*')
-        .pipe( gulp.dest(serverPathImg) )
-        .pipe( bs.stream() );
+            .pipe(gulp.dest(serverPathImg));
 
         gulp.src('src/images/**/*.*')
-        .pipe( gulp.dest(serverPathImages) )
-        .pipe( bs.stream() );
-    }
+            .pipe(gulp.dest(serverPathImages));
+    });
+    gulp.task('default', function (callback) {
+        rs(
+            'server',
+            callback
+        );
+    });
 
-    gulp.src('src/assets/img/**/*.*')
-        .pipe( gulp.dest('build/assets/img') )
-        .pipe( bs.stream() );
+} else {
+    gulp.task('server', ['scss', 'pug', 'copy:js', 'copy:libs', 'copy:img', 'copy:fonts'], function () {
+        bs.init({
+            server: {
+                baseDir: 'build/'
+            }
+        });
 
-    gulp.src('src/images/**/*.*')
-        .pipe( gulp.dest('build/images') )
-        .pipe( bs.stream() );
-});
-gulp.task('copy:fonts', function(){
-    return gulp.src('src/assets/fonts/**/*.*')
-        .pipe( gulp.dest('build/assets/fonts') )
-        .pipe( bs.stream() );
-});
-gulp.task('clean:build', function(){
-    return del('build');
-});
-gulp.task( 'default', function(callback){
-    rs(
-        'clean:build',
-        'server',
-        callback
-    );
-} );
+        gulp.watch('src/pug/**/*.*', ['pug']);
+        gulp.watch('src/assets/scss/**/*.scss', ['scss']);
+        gulp.watch('src/assets/js/**/*.js', ['copy:js']);
+        gulp.watch('src/assets/libs/**/*.*', ['copy:libs']);
+        gulp.watch('src/assets/img/**/*.*', ['copy:img']);
+        gulp.watch('src/images/**/*.*', ['copy:img']);
+        gulp.watch('src/assets/fonts/**/*.*', ['copy:fonts']);
+        gulp.watch('src/assets/js/**/*.js').on('change', bs.reload);
+    });
+    gulp.task('scss', function () {
+
+        if (copyToServer == 'yes') {
+            gulp.src('src/assets/scss/style.scss')
+                .pipe(plumber({
+                    errorHandler: notify.onError(function (err) {
+                        return {
+                            title: 'Styles',
+                            message: err.message
+                        }
+                    })
+                }))
+                .pipe(sourcemaps.init())
+                .pipe(sass())
+                .pipe(prefixer({
+                    browsers: ['last 5 versions'],
+                    cascade: false
+                }))
+                .pipe(sourcemaps.write())
+                .pipe(gulp.dest(serverPathCss))
+                .pipe(bs.stream());
+        }
+
+        return gulp.src('src/assets/scss/style.scss')
+            .pipe(plumber({
+                errorHandler: notify.onError(function (err) {
+                    return {
+                        title: 'Styles',
+                        message: err.message
+                    }
+                })
+            }))
+            .pipe(sourcemaps.init())
+            .pipe(sass())
+            .pipe(prefixer({
+                browsers: ['last 5 versions'],
+                cascade: false
+            }))
+            .pipe(sourcemaps.write())
+            .pipe(gulp.dest('build/assets/css'))
+            .pipe(bs.stream());
+    });
+    gulp.task('pug', function () {
+        return gulp.src('src/pug/*.pug')
+            .pipe(plumber({
+                errorHandler: notify.onError(function (err) {
+                    return {
+                        title: 'Pug',
+                        message: err.message
+                    }
+                })
+            }))
+            .pipe(pug({
+                pretty: true
+            }))
+            .pipe(gulp.dest('build'))
+            .pipe(bs.stream());
+    });
+    gulp.task('copy:js', function () {
+        if (copyToServer == 'yes') {
+            gulp.src('src/assets/js/**/*.*')
+                .pipe(gulp.dest(serverPathJs))
+                .pipe(bs.stream());
+        }
+
+
+        return gulp.src('src/assets/js/**/*.*')
+            .pipe(gulp.dest('build/assets/js'))
+            .pipe(bs.stream());
+
+    });
+    gulp.task('copy:libs', function () {
+        return gulp.src('src/assets/libs/**/*.*')
+            .pipe(gulp.dest('build/assets/libs'))
+            .pipe(bs.stream());
+    });
+    gulp.task('copy:img', function () {
+        if (copyToServer == 'yes') {
+            gulp.src('src/assets/img/**/*.*')
+                .pipe(gulp.dest(serverPathImg))
+                .pipe(bs.stream());
+
+            gulp.src('src/images/**/*.*')
+                .pipe(gulp.dest(serverPathImages))
+                .pipe(bs.stream());
+        }
+
+        gulp.src('src/assets/img/**/*.*')
+            .pipe(gulp.dest('build/assets/img'))
+            .pipe(bs.stream());
+
+        gulp.src('src/images/**/*.*')
+            .pipe(gulp.dest('build/images'))
+            .pipe(bs.stream());
+    });
+    gulp.task('copy:fonts', function () {
+        return gulp.src('src/assets/fonts/**/*.*')
+            .pipe(gulp.dest('build/assets/fonts'))
+            .pipe(bs.stream());
+    });
+    gulp.task('clean:build', function () {
+        return del('build');
+    });
+    gulp.task('default', function (callback) {
+        rs(
+            'clean:build',
+            'server',
+            callback
+        );
+    });
+}

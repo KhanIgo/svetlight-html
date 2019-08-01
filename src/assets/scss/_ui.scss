@@ -83,6 +83,10 @@ button {
         width: 100%;
     }
     &_checkbox {}
+    
+    &.has-error{
+        border-color: red !important;
+    }
 }
 
 .checkbox-view {

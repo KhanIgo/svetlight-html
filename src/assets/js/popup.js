@@ -5,6 +5,11 @@ jQuery(function($){
         e.preventDefault();
         $('.popup-form-window_call-form').addClass('popup-form-window_is-active');
     });
+    
+    $('body').on('click', '.js-show-checkout-popup-form', function(e){
+        e.preventDefault();
+        $('.popup-form-window_checkout-form').addClass('popup-form-window_is-active');
+    });
 
     $('body').on('click', '.js-close_popup-window', function(e){
         e.preventDefault();
